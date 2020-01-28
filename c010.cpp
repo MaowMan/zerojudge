@@ -50,7 +50,7 @@ int main(){
                 }
             }
         }
-        print(data);
+        //print(data);
         middle(data);
     }
 }
