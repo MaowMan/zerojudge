@@ -31,24 +31,25 @@ bool solve(std::vector<struct node> &data, std::set<int> &been , int now , int s
 
 int main(){
     int a,b;
-    std::cin>>a>>b;
-    std::vector<struct node> data(a);
-    for(int i=0;i<data.size();i++){
-        data[i].n=i+1;
-    }
-    for(int i=0;i<b;i++){
-        int from,to;
-        std::cin>>from>>to;
-        data[from-1].childs.push_back(to-1);
-    }
-    int start,stop;
-    std::cin>>start>>stop;
-    std::set<int> been;
-    if (solve(data,been,start-1,stop-1)){
-        std::cout<<"Yes!!!"<<std::endl;
-    }
-    else{
-        std::cout<<"No!!!"<<std::endl;
+    while(std::cin>>a>>b){
+        std::vector<struct node> data(a);
+        for(int i=0;i<data.size();i++){
+            data[i].n=i+1;
+        }
+        for(int i=0;i<b;i++){
+            int from,to;
+            std::cin>>from>>to;
+            data[from-1].childs.push_back(to-1);
+        }
+        int start,stop;
+        std::cin>>start>>stop;
+        std::set<int> been;
+        if (solve(data,been,start-1,stop-1)){
+            std::cout<<"Yes!!!"<<std::endl;
+        }
+        else{
+            std::cout<<"No!!!"<<std::endl;
+        }
     }
 
 }
